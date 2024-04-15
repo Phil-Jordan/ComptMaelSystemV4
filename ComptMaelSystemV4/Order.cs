@@ -18,26 +18,32 @@ namespace ComptMaelSystemV4
         public string OrderItems { get; set; }
         public string Quantity { get; set; }
 
-        public bool CheckOrderDateExists(string filePath, string orderDate)
+        public static bool validateDateExists(string orderDate)
         {
-            var lines = File.ReadAllLines(filePath).Skip(1); // Skip the header row
+            string filePath = @"Orders.csv";
+            var lines = File.ReadAllLines(filePath).Skip(1);
 
+            // Check if any line contains the order date.
             foreach (var line in lines)
             {
-                // Split line into columns, assuming there are no commas in the quoted text
+                // Split the line by comma and check the third column (index 2) for the order date.
                 var columns = line.Split(',');
-                var currentOrderDate = columns[2].Trim('"').Trim(); // Trimming potential quotes and whitespace
+                var currentOrderDate = columns[2].Trim('"').Trim();
 
+                // If the current order date matches the provided order date, return true.
                 if (currentOrderDate == orderDate)
                 {
-                    return true; // The order date exists in the file
+                    return true;
                 }
             }
-            // If we reach this point, the order date was not found
+
+            // If no matching date is found, return false.
             return false;
 
-            
         }
+
+
+
 
         public static List<Order> retrieveOrdersbyDate(string orderDate)
         {
@@ -78,13 +84,14 @@ namespace ComptMaelSystemV4
         }
         public void DisplayOrderData(DataGridView dataGridView, Order order)
         {
-           
-            
 
-          
-            
+
+
+
+
 
 
         }
     }
 }
+

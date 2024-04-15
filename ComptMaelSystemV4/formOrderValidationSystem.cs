@@ -31,8 +31,16 @@ namespace ComptMaelSystemV4
         private void btn_CreateValTable_Click(object sender, EventArgs e)
         {
             string orderDate = txtOrderDate.Text;
-            var orders = Order.retrieveOrdersbyDate(orderDate);
+            bool dateExists = Order.validateDateExists(orderDate);
+            
+            if (!dateExists)
+            {
 
+                MessageBox.Show("The date is not valid.", "Date Check", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
+
+            var orders = Order.retrieveOrdersbyDate(orderDate);
             foreach (var order in orders)
             {
                 orderBindingSource.Add(order);

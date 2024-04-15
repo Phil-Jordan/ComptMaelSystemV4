@@ -48,17 +48,17 @@
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.orderValidationBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.orderValidationBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.Correct = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Comment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customerIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isCustomizedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.orderItemsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Correct = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Comment = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.orderValidationBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.orderValidationBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -70,9 +70,9 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(391, 244);
+            this.textBox1.Location = new System.Drawing.Point(377, 244);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(242, 27);
+            this.textBox1.Size = new System.Drawing.Size(256, 27);
             this.textBox1.TabIndex = 0;
             this.textBox1.Text = "Order Date (yyyy-mm-dd)";
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -91,7 +91,7 @@
             this.btn_CreateValTable.AutoSize = true;
             this.btn_CreateValTable.BackColor = System.Drawing.Color.BurlyWood;
             this.btn_CreateValTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_CreateValTable.Location = new System.Drawing.Point(391, 282);
+            this.btn_CreateValTable.Location = new System.Drawing.Point(377, 282);
             this.btn_CreateValTable.Name = "btn_CreateValTable";
             this.btn_CreateValTable.Size = new System.Drawing.Size(108, 47);
             this.btn_CreateValTable.TabIndex = 2;
@@ -166,7 +166,7 @@
             // 
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox2.Location = new System.Drawing.Point(742, 199);
+            this.textBox2.Location = new System.Drawing.Point(836, 189);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(505, 30);
             this.textBox2.TabIndex = 9;
@@ -292,17 +292,18 @@
             this.pictureBox1.TabIndex = 20;
             this.pictureBox1.TabStop = false;
             // 
-            // orderBindingSource
+            // Correct
             // 
-            this.orderBindingSource.DataSource = typeof(ComptMaelSystemV4.Order);
+            this.Correct.HeaderText = "Is Correct";
+            this.Correct.MinimumWidth = 6;
+            this.Correct.Name = "Correct";
+            this.Correct.Width = 69;
             // 
-            // orderValidationBindingSource
+            // Comment
             // 
-            this.orderValidationBindingSource.DataSource = typeof(ComptMaelSystemV4.OrderValidation);
-            // 
-            // orderValidationBindingSource1
-            // 
-            this.orderValidationBindingSource1.DataSource = typeof(ComptMaelSystemV4.OrderValidation);
+            this.Comment.HeaderText = "Comments";
+            this.Comment.MinimumWidth = 6;
+            this.Comment.Name = "Comment";
             // 
             // orderIDDataGridViewTextBoxColumn
             // 
@@ -353,18 +354,17 @@
             this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
             this.quantityDataGridViewTextBoxColumn.Width = 84;
             // 
-            // Correct
+            // orderBindingSource
             // 
-            this.Correct.HeaderText = "Is Correct";
-            this.Correct.MinimumWidth = 6;
-            this.Correct.Name = "Correct";
-            this.Correct.Width = 69;
+            this.orderBindingSource.DataSource = typeof(ComptMaelSystemV4.Order);
             // 
-            // Comment
+            // orderValidationBindingSource
             // 
-            this.Comment.HeaderText = "Comments";
-            this.Comment.MinimumWidth = 6;
-            this.Comment.Name = "Comment";
+            this.orderValidationBindingSource.DataSource = typeof(ComptMaelSystemV4.OrderValidation);
+            // 
+            // orderValidationBindingSource1
+            // 
+            this.orderValidationBindingSource1.DataSource = typeof(ComptMaelSystemV4.OrderValidation);
             // 
             // formOrderValidationSystem
             // 
